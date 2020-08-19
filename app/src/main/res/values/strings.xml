@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Android-HW-16.1</string>
+    <string name="enter_name_or_coordinates_hint">Enter the name or coordinates of the object</string>
+    <string name="btn_search">search</string>
+    <string name="edit_text_is_empty">Enter the name or coordinates!</string>
+</resources>
