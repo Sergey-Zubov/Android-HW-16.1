@@ -11,6 +11,11 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:maxLength="100"
         android:hint="@string/enter_name_or_coordinates_hint"/>
 
     <Button

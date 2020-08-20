@@ -1,9 +1,7 @@
 package com.szubov.android_hw_161;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LOG_TAG = "My app";
+    private final String LOG_TAG = "My app";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 if (string.length() > 0) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     Uri uri;
-                    if (!string.contains("\\W")) {
-                        uri = Uri.parse("geo:?q=" + string);
-                    } else {
+                    if(string.matches("\\d*")) {
                         uri = Uri.parse("geo:" + string);
+                    } else {
+                        uri = Uri.parse("geo:?q=" + string);
                     }
                     intent.setData(uri);
                     if (intent.resolveActivity(getPackageManager()) != null) {
@@ -46,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(LOG_TAG, "The app for searching for an object was not found");
                     };
                 } else {
+                    if (editText.length() > 0) {
+                        editText.setText("");
+                    }
                     Toast.makeText(MainActivity.this, R.string.edit_text_is_empty,
                             Toast.LENGTH_SHORT).show();
                 }
