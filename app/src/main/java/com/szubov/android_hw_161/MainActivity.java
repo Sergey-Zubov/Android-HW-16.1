@@ -42,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         Log.d(LOG_TAG, "The app for searching for an object was not found");
+                        Toast.makeText(getApplicationContext(), R.string.app_not_found_toast,
+                                Toast.LENGTH_SHORT).show();
                     };
                 } else {
                     if (editText.length() > 0) {
                         editText.setText("");
                     }
-                    Toast.makeText(MainActivity.this, R.string.edit_text_is_empty,
+                    Toast.makeText(getApplicationContext(), R.string.edit_text_is_empty,
                             Toast.LENGTH_SHORT).show();
                 }
             }

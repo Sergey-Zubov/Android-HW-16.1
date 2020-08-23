@@ -3,4 +3,5 @@
     <string name="enter_name_or_coordinates_hint">Enter the name or coordinates of the object</string>
     <string name="btn_search">search</string>
     <string name="edit_text_is_empty">Enter the name or coordinates!</string>
+    <string name="app_not_found_toast">No suitable applications were found on the device to find the location of the object</string>
 </resources>
